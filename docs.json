@@ -1,5 +1,5 @@
 {
-  "$schema": "https://mintlify.com/schema.json",
+  "$schema": "https://mintlify.com/docs.json",
   "name": "Lite Developer Docs",
   "theme": "mint",
   "logo": {
@@ -10,11 +10,7 @@
   "colors": {
     "primary": "#6B4EFF",
     "light": "#8B72FF",
-    "dark": "#4B2EDF",
-    "background": {
-      "light": "#F9F9FB",
-      "dark": "#0F0F14"
-    }
+    "dark": "#4B2EDF"
   },
   "font": {
     "headings": {
@@ -46,207 +42,204 @@
       "url": "changelog"
     }
   ],
-  "navigation": [
-    {
-      "group": "Getting Started",
-      "pages": [
-        "introduction",
-        "quickstart",
-        "authentication"
-      ]
-    },
-    {
-      "group": "Guides",
-      "pages": [
-        "guides/user-management",
-        "guides/payment-configurations",
-        "guides/channels",
-        "guides/smart-routing",
-        "guides/risk-rules",
-        "guides/money-movement",
-        "guides/settlement"
-      ]
-    },
-    {
-      "group": "API Reference",
-      "pages": [
-        {
-          "group": "3DS Authentication",
-          "pages": [
-            "api-reference/three-ds/dummy-setup",
-            "api-reference/three-ds/dummy-auth",
-            "api-reference/three-ds/dummy-results",
-            "api-reference/three-ds/health"
-          ]
-        },
-        {
-          "group": "Merchant Config",
-          "pages": [
-            "api-reference/merchant-config/get-config",
-            "api-reference/merchant-config/create-config",
-            "api-reference/merchant-config/update-config"
-          ]
-        },
-        {
-          "group": "User Management",
-          "pages": [
-            "api-reference/users/signup",
-            "api-reference/users/login",
-            "api-reference/users/confirm-login",
-            "api-reference/users/logout",
-            "api-reference/users/resend-verification",
-            "api-reference/users/verify-email",
-            "api-reference/users/reset-password"
-          ]
-        },
-        {
-          "group": "Smart Routing",
-          "pages": [
-            "api-reference/smart-routing/get-profile",
-            "api-reference/smart-routing/list-profiles",
-            "api-reference/smart-routing/create-profile",
-            "api-reference/smart-routing/update-profile",
-            "api-reference/smart-routing/delete-profile",
-            "api-reference/smart-routing/list-rules",
-            "api-reference/smart-routing/get-rule",
-            "api-reference/smart-routing/create-rule",
-            "api-reference/smart-routing/update-rule",
-            "api-reference/smart-routing/delete-rule",
-            "api-reference/smart-routing/facts"
-          ]
-        },
-        {
-          "group": "Terminal Service",
-          "pages": [
-            "api-reference/terminals/list",
-            "api-reference/terminals/get",
-            "api-reference/terminals/create",
-            "api-reference/terminals/update",
-            "api-reference/terminals/delete"
-          ]
-        },
-        {
-          "group": "Risk Rules",
-          "pages": [
-            "api-reference/risk/get-facts",
-            "api-reference/risk/list-rules",
-            "api-reference/risk/get-rule",
-            "api-reference/risk/create-rule",
-            "api-reference/risk/update-rule",
-            "api-reference/risk/delete-rule"
-          ]
-        },
-        {
-          "group": "Payment Reports",
-          "pages": [
-            "api-reference/payment-reports/summary",
-            "api-reference/payment-reports/transactions",
-            "api-reference/payment-reports/payment-details"
-          ]
-        },
-        {
-          "group": "Payment Configurations",
-          "pages": [
-            "api-reference/payment-configurations/create",
-            "api-reference/payment-configurations/get",
-            "api-reference/payment-configurations/update",
-            "api-reference/payment-configurations/domains-create",
-            "api-reference/payment-configurations/domains-get",
-            "api-reference/payment-configurations/domains-delete"
-          ]
-        },
-        {
-          "group": "Channels",
-          "pages": [
-            "api-reference/channels/get",
-            "api-reference/channels/list",
-            "api-reference/channels/create-inperson",
-            "api-reference/channels/create-ecom",
-            "api-reference/channels/update",
-            "api-reference/channels/delete"
-          ]
-        },
-        {
-          "group": "Money Movement",
-          "pages": [
-            "api-reference/money-movement/initiate-transfer",
-            "api-reference/money-movement/verify-sms-otp",
-            "api-reference/money-movement/initiate-ivr",
-            "api-reference/money-movement/verify-ivr",
-            "api-reference/money-movement/get-payout",
-            "api-reference/money-movement/list-transfers",
-            "api-reference/money-movement/update-payout-status",
-            "api-reference/money-movement/create-beneficiary",
-            "api-reference/money-movement/list-beneficiaries",
-            "api-reference/money-movement/update-beneficiary-status"
-          ]
-        },
-        {
-          "group": "Pricing",
-          "pages": [
-            "api-reference/pricing/create-profile",
-            "api-reference/pricing/list-profiles",
-            "api-reference/pricing/get-profile",
-            "api-reference/pricing/update-profile",
-            "api-reference/pricing/delete-profile",
-            "api-reference/pricing/update-profile-status",
-            "api-reference/pricing/create-rule",
-            "api-reference/pricing/list-rules",
-            "api-reference/pricing/get-rule",
-            "api-reference/pricing/update-rule",
-            "api-reference/pricing/delete-rule",
-            "api-reference/pricing/facts"
-          ]
-        },
-        {
-          "group": "Ledger",
-          "pages": [
-            "api-reference/ledger/create-account",
-            "api-reference/ledger/list-accounts",
-            "api-reference/ledger/get-account",
-            "api-reference/ledger/transition-account-status",
-            "api-reference/ledger/list-journal-entries"
-          ]
-        },
-        {
-          "group": "Settlement",
-          "pages": [
-            "api-reference/settlement/list-windows",
-            "api-reference/settlement/get-window",
-            "api-reference/settlement/list-instructions",
-            "api-reference/settlement/get-instruction",
-            "api-reference/settlement/list-transactions",
-            "api-reference/settlement/get-transaction"
-          ]
-        },
-        {
-          "group": "Email Service",
-          "pages": [
-            "api-reference/email/create-template",
-            "api-reference/email/list-templates",
-            "api-reference/email/get-template",
-            "api-reference/email/update-template",
-            "api-reference/email/delete-template",
-            "api-reference/email/send-email"
-          ]
-        },
-        {
-          "group": "Business Management",
-          "pages": [
-            "api-reference/business/nsso-status"
-          ]
-        }
-      ]
-    },
-    {
-      "group": "Resources",
-      "pages": [
-        "changelog",
-        "errors",
-        "rate-limits"
-      ]
-    }
-  ],
+  "navigation": {
+    "groups": [
+      {
+        "group": "Getting Started",
+        "pages": [
+          "introduction",
+          "quickstart",
+          "authentication"
+        ]
+      },
+      {
+        "group": "Guides",
+        "pages": [
+          "guides/user-management",
+          "guides/payment-configurations",
+          "guides/channels",
+          "guides/smart-routing",
+          "guides/risk-rules",
+          "guides/money-movement",
+          "guides/settlement"
+        ]
+      },
+      {
+        "group": "3DS Authentication",
+        "pages": [
+          "api-reference/three-ds/dummy-setup",
+          "api-reference/three-ds/dummy-auth",
+          "api-reference/three-ds/dummy-results",
+          "api-reference/three-ds/health"
+        ]
+      },
+      {
+        "group": "Merchant Config",
+        "pages": [
+          "api-reference/merchant-config/get-config",
+          "api-reference/merchant-config/create-config",
+          "api-reference/merchant-config/update-config"
+        ]
+      },
+      {
+        "group": "User Management",
+        "pages": [
+          "api-reference/users/signup",
+          "api-reference/users/login",
+          "api-reference/users/confirm-login",
+          "api-reference/users/logout",
+          "api-reference/users/resend-verification",
+          "api-reference/users/verify-email",
+          "api-reference/users/reset-password"
+        ]
+      },
+      {
+        "group": "Smart Routing",
+        "pages": [
+          "api-reference/smart-routing/get-profile",
+          "api-reference/smart-routing/list-profiles",
+          "api-reference/smart-routing/create-profile",
+          "api-reference/smart-routing/update-profile",
+          "api-reference/smart-routing/delete-profile",
+          "api-reference/smart-routing/list-rules",
+          "api-reference/smart-routing/get-rule",
+          "api-reference/smart-routing/create-rule",
+          "api-reference/smart-routing/update-rule",
+          "api-reference/smart-routing/delete-rule",
+          "api-reference/smart-routing/facts"
+        ]
+      },
+      {
+        "group": "Terminal Service",
+        "pages": [
+          "api-reference/terminals/list",
+          "api-reference/terminals/get",
+          "api-reference/terminals/create",
+          "api-reference/terminals/update",
+          "api-reference/terminals/delete"
+        ]
+      },
+      {
+        "group": "Risk Rules",
+        "pages": [
+          "api-reference/risk/get-facts",
+          "api-reference/risk/list-rules",
+          "api-reference/risk/get-rule",
+          "api-reference/risk/create-rule",
+          "api-reference/risk/update-rule",
+          "api-reference/risk/delete-rule"
+        ]
+      },
+      {
+        "group": "Payment Reports",
+        "pages": [
+          "api-reference/payment-reports/summary",
+          "api-reference/payment-reports/transactions",
+          "api-reference/payment-reports/payment-details"
+        ]
+      },
+      {
+        "group": "Payment Configurations",
+        "pages": [
+          "api-reference/payment-configurations/create",
+          "api-reference/payment-configurations/get",
+          "api-reference/payment-configurations/update",
+          "api-reference/payment-configurations/domains-create",
+          "api-reference/payment-configurations/domains-get",
+          "api-reference/payment-configurations/domains-delete"
+        ]
+      },
+      {
+        "group": "Channels",
+        "pages": [
+          "api-reference/channels/get",
+          "api-reference/channels/list",
+          "api-reference/channels/create-inperson",
+          "api-reference/channels/create-ecom",
+          "api-reference/channels/update",
+          "api-reference/channels/delete"
+        ]
+      },
+      {
+        "group": "Money Movement",
+        "pages": [
+          "api-reference/money-movement/initiate-transfer",
+          "api-reference/money-movement/verify-sms-otp",
+          "api-reference/money-movement/initiate-ivr",
+          "api-reference/money-movement/verify-ivr",
+          "api-reference/money-movement/get-payout",
+          "api-reference/money-movement/list-transfers",
+          "api-reference/money-movement/update-payout-status",
+          "api-reference/money-movement/create-beneficiary",
+          "api-reference/money-movement/list-beneficiaries",
+          "api-reference/money-movement/update-beneficiary-status"
+        ]
+      },
+      {
+        "group": "Pricing",
+        "pages": [
+          "api-reference/pricing/create-profile",
+          "api-reference/pricing/list-profiles",
+          "api-reference/pricing/get-profile",
+          "api-reference/pricing/update-profile",
+          "api-reference/pricing/delete-profile",
+          "api-reference/pricing/update-profile-status",
+          "api-reference/pricing/create-rule",
+          "api-reference/pricing/list-rules",
+          "api-reference/pricing/get-rule",
+          "api-reference/pricing/update-rule",
+          "api-reference/pricing/delete-rule",
+          "api-reference/pricing/facts"
+        ]
+      },
+      {
+        "group": "Ledger",
+        "pages": [
+          "api-reference/ledger/create-account",
+          "api-reference/ledger/list-accounts",
+          "api-reference/ledger/get-account",
+          "api-reference/ledger/transition-account-status",
+          "api-reference/ledger/list-journal-entries"
+        ]
+      },
+      {
+        "group": "Settlement",
+        "pages": [
+          "api-reference/settlement/list-windows",
+          "api-reference/settlement/get-window",
+          "api-reference/settlement/list-instructions",
+          "api-reference/settlement/get-instruction",
+          "api-reference/settlement/list-transactions",
+          "api-reference/settlement/get-transaction"
+        ]
+      },
+      {
+        "group": "Email Service",
+        "pages": [
+          "api-reference/email/create-template",
+          "api-reference/email/list-templates",
+          "api-reference/email/get-template",
+          "api-reference/email/update-template",
+          "api-reference/email/delete-template",
+          "api-reference/email/send-email"
+        ]
+      },
+      {
+        "group": "Business Management",
+        "pages": [
+          "api-reference/business/nsso-status"
+        ]
+      },
+      {
+        "group": "Resources",
+        "pages": [
+          "changelog",
+          "errors",
+          "rate-limits"
+        ]
+      }
+    ]
+  },
   "footerSocials": {
     "linkedin": "https://www.linkedin.com/company/lite-sa"
   },
@@ -255,7 +248,5 @@
       "mode": "show"
     }
   },
-  "custom": {
-    "css": "/custom.css"
-  }
+  "css": "/custom.css"
 }
