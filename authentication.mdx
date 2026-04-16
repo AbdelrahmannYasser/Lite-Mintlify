@@ -1,0 +1,61 @@
+---
+title: Authentication
+description: How to authenticate requests to the Lite API
+---
+
+# Authentication
+
+All Lite API requests require authentication. We support two authentication methods depending on the endpoint type.
+
+## API Keys
+
+Most Dashboard API requests are authenticated with a Bearer token obtained from the login flow.
+
+```bash
+Authorization: Bearer <your-token>
+```
+
+### Getting a token
+
+<Steps>
+  <Step title="Create an account">
+    Sign up via the [Lite Dashboard](https://dashboard.lite.sa) or using the [signup endpoint](/api-reference/users/signup).
+  </Step>
+  <Step title="Log in">
+    Call the [login endpoint](/api-reference/users/login) with your credentials. You will receive a session token.
+  </Step>
+  <Step title="Confirm login (if MFA is enabled)">
+    If your account has MFA enabled, confirm the login using the [confirm login endpoint](/api-reference/users/confirm-login).
+  </Step>
+  <Step title="Use the token">
+    Pass the token in the `Authorization` header on every subsequent request.
+  </Step>
+</Steps>
+
+## Sandbox vs Production
+
+Use your sandbox credentials against the sandbox base URL. Sandbox requests do not move real money.
+
+| Environment | Base URL |
+|---|---|
+| Sandbox | `https://api.sandbox.lite.sa` |
+| Production | `https://api.lite.sa` |
+
+<Note>
+  Never use production credentials in development environments. Keep your credentials out of version control.
+</Note>
+
+## Token expiry
+
+Tokens expire after a fixed period. When a request returns `401 Unauthorized`, re-authenticate by calling the login endpoint again.
+
+## Errors
+
+Authentication failures return standard HTTP error codes:
+
+| Code | Meaning |
+|---|---|
+| `401` | Missing or invalid token |
+| `403` | Valid token but insufficient permissions |
+
+See the [Errors reference](/errors) for the full error schema.

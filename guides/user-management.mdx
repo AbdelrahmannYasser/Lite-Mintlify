@@ -1,0 +1,92 @@
+---
+title: User Management
+description: How to manage merchant users — signup, login, MFA, and password reset
+---
+
+# User Management
+
+This guide covers the full user lifecycle: creating an account, authenticating, verifying your email, and resetting your password.
+
+## Signup
+
+Create a new merchant account:
+
+```bash cURL
+curl --request POST \
+  --url https://api.sandbox.lite.sa/v1/auth/signup \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "email": "merchant@example.com",
+    "password": "SecurePassword123!"
+  }'
+```
+
+After signup, a verification email is sent to the provided address.
+
+## Email Verification
+
+Verify the email address before logging in:
+
+```bash cURL
+curl --request POST \
+  --url https://api.sandbox.lite.sa/v1/auth/verify-email \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "token": "<verification-token-from-email>"
+  }'
+```
+
+If the email wasn't received, resend it:
+
+```bash cURL
+curl --request POST \
+  --url https://api.sandbox.lite.sa/v1/auth/resend-verification \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "email": "merchant@example.com"
+  }'
+```
+
+## Login
+
+```bash cURL
+curl --request POST \
+  --url https://api.sandbox.lite.sa/v1/auth/login \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "email": "merchant@example.com",
+    "password": "SecurePassword123!"
+  }'
+```
+
+If MFA is enabled, the response will indicate a pending confirmation step.
+
+## Confirm Login (MFA)
+
+```bash cURL
+curl --request POST \
+  --url https://api.sandbox.lite.sa/v1/auth/confirm-login \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "token": "<mfa-token>"
+  }'
+```
+
+## Password Reset
+
+```bash cURL
+curl --request POST \
+  --url https://api.sandbox.lite.sa/v1/auth/reset-password \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "email": "merchant@example.com"
+  }'
+```
+
+## Logout
+
+```bash cURL
+curl --request POST \
+  --url https://api.sandbox.lite.sa/v1/auth/logout \
+  --header 'Authorization: Bearer <your-token>'
+```

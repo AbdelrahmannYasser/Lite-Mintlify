@@ -1,0 +1,133 @@
+/* ─── Lite Brand Overrides ─────────────────────────────────── */
+
+/* Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ── Page header accent stripe (matches Lite style guide divider) */
+.content-container > h1:first-of-type,
+.prose h1 {
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #6B4EFF;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Buttons ── */
+/* Primary buttons: match Lite's filled purple with 6px radius */
+.btn-primary,
+button[data-primary],
+a[data-primary] {
+  background-color: #6B4EFF !important;
+  border-radius: 6px !important;
+  font-weight: 500;
+}
+
+.btn-primary:hover {
+  background-color: #4B2EDF !important;
+}
+
+/* ── Sidebar ── */
+/* Active nav item color */
+.sidebar-item-active,
+[data-active="true"] {
+  color: #6B4EFF !important;
+  border-left-color: #6B4EFF !important;
+}
+
+/* Sidebar group label */
+.sidebar-group-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9CA3AF;
+}
+
+/* ── Callout / Alert blocks ── */
+/* Map Lite's 4 alert types to Mintlify callouts */
+
+/* Success (green) */
+.callout-success,
+[data-callout="check"] {
+  border-left-color: #22C55E !important;
+  background-color: #F0FDF4 !important;
+}
+
+/* Error (red) */
+.callout-danger,
+[data-callout="warning"] {
+  border-left-color: #EF4444 !important;
+  background-color: #FEF2F2 !important;
+}
+
+/* Warning (amber) */
+.callout-warning,
+[data-callout="caution"] {
+  border-left-color: #F59E0B !important;
+  background-color: #FFFBEB !important;
+}
+
+/* Info (purple-blue) */
+.callout-info,
+[data-callout="note"] {
+  border-left-color: #6B4EFF !important;
+  background-color: #F5F3FF !important;
+}
+
+/* ── Code blocks ── */
+pre, code {
+  border-radius: 6px !important;
+  font-size: 0.875rem;
+}
+
+/* ── Status badge chips (custom) ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.badge-success  { background: #DCFCE7; color: #15803D; }
+.badge-pending  { background: #FEF9C3; color: #A16207; }
+.badge-rejected { background: #FEE2E2; color: #B91C1C; }
+.badge-failed   { background: #F3F4F6; color: #6B7280; }
+.badge-info     { background: #EFF6FF; color: #1D4ED8; }
+.badge-primary  { background: #EDE9FE; color: #6B4EFF; }
+
+/* ── API playground ── */
+/* Tighten up the request panel to match Lite's clean aesthetic */
+.api-playground {
+  border-radius: 8px;
+  border: 1px solid #E5E7EB;
+}
+
+/* ── Topbar ── */
+nav, header {
+  border-bottom: 1px solid #E5E7EB;
+}
+
+/* ── General border radius consistency ── */
+input, select, textarea {
+  border-radius: 6px !important;
+}
+
+.card, [class*="card"] {
+  border-radius: 8px !important;
+}
+
+/* ── Dark mode adjustments ── */
+@media (prefers-color-scheme: dark) {
+  .badge-success  { background: #14532D; color: #86EFAC; }
+  .badge-pending  { background: #713F12; color: #FDE68A; }
+  .badge-rejected { background: #7F1D1D; color: #FCA5A5; }
+  .badge-failed   { background: #1F2937; color: #9CA3AF; }
+  .badge-info     { background: #1E3A5F; color: #93C5FD; }
+  .badge-primary  { background: #2E1065; color: #C4B5FD; }
+
+  [data-callout="note"] {
+    background-color: #1E1B4B !important;
+  }
+}

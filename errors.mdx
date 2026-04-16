@@ -1,0 +1,51 @@
+---
+title: Errors
+description: Standard error codes and response formats returned by the Lite API
+---
+
+# Errors
+
+The Lite API uses standard HTTP status codes. Error responses include a JSON body with a machine-readable `code` and a human-readable `message`.
+
+## Error response format
+
+```json
+{
+  "code": "INVALID_CREDENTIALS",
+  "message": "The email or password provided is incorrect.",
+  "status": 401
+}
+```
+
+## HTTP status codes
+
+| Status | Meaning |
+|---|---|
+| `200` | Success |
+| `201` | Resource created |
+| `400` | Bad request — check your request body |
+| `401` | Unauthorized — missing or expired token |
+| `403` | Forbidden — valid token but insufficient permissions |
+| `404` | Not found |
+| `409` | Conflict — resource already exists |
+| `422` | Unprocessable entity — validation failed |
+| `429` | Rate limit exceeded |
+| `500` | Internal server error |
+
+## Common error codes
+
+| Code | Status | Description |
+|---|---|---|
+| `INVALID_CREDENTIALS` | 401 | Email or password is wrong |
+| `TOKEN_EXPIRED` | 401 | Session token has expired, re-authenticate |
+| `INSUFFICIENT_PERMISSIONS` | 403 | Your account does not have access to this resource |
+| `RESOURCE_NOT_FOUND` | 404 | The requested resource does not exist |
+| `DUPLICATE_RESOURCE` | 409 | A resource with this identifier already exists |
+| `VALIDATION_ERROR` | 422 | One or more request fields failed validation |
+| `RATE_LIMIT_EXCEEDED` | 429 | Too many requests — back off and retry |
+
+## Handling errors
+
+<Note>
+  Always check the `code` field, not just the HTTP status, for programmatic error handling. The same status code can map to different recoverable and non-recoverable states.
+</Note>

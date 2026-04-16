@@ -1,0 +1,33 @@
+---
+title: Rate Limits
+description: Request rate limits for the Lite API
+---
+
+# Rate Limits
+
+The Lite API enforces rate limits to ensure availability for all merchants.
+
+## Limits
+
+| Tier | Requests per minute |
+|---|---|
+| Sandbox | 60 |
+| Production | 300 |
+
+## Rate limit headers
+
+Every response includes headers that tell you your current usage:
+
+| Header | Description |
+|---|---|
+| `X-RateLimit-Limit` | Maximum requests allowed per window |
+| `X-RateLimit-Remaining` | Requests remaining in the current window |
+| `X-RateLimit-Reset` | Unix timestamp when the window resets |
+
+## When you hit the limit
+
+When you exceed the rate limit, the API returns `429 Too Many Requests`. Back off and retry after the time indicated in `X-RateLimit-Reset`.
+
+<Warning>
+  Repeatedly hitting rate limits in production may result in temporary suspension. If your integration requires higher limits, contact [support@lite.sa](mailto:support@lite.sa).
+</Warning>

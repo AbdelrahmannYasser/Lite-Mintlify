@@ -1,0 +1,91 @@
+---
+title: Quickstart
+description: Make your first Lite API call in under 5 minutes
+---
+
+# Quickstart
+
+This guide walks you through authenticating and making your first API call against the Lite sandbox.
+
+## Prerequisites
+
+- A Lite sandbox account — [sign up here](https://dashboard.lite.sa)
+- `curl` or any HTTP client
+
+## Step 1 — Log in
+
+```bash cURL
+curl --request POST \
+  --url https://api.sandbox.lite.sa/v1/auth/login \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "email": "you@example.com",
+    "password": "your-password"
+  }'
+```
+
+You will receive a response with a `token` field. Copy it — you will use it in every subsequent request.
+
+## Step 2 — Make an authenticated request
+
+Fetch your merchant configuration to confirm the token works:
+
+<CodeGroup>
+
+```bash cURL
+curl --request GET \
+  --url https://api.sandbox.lite.sa/v1/merchant/config \
+  --header 'Authorization: Bearer <your-token>'
+```
+
+```javascript Node.js
+const response = await fetch('https://api.sandbox.lite.sa/v1/merchant/config', {
+  headers: {
+    Authorization: 'Bearer <your-token>',
+  },
+});
+const data = await response.json();
+console.log(data);
+```
+
+```python Python
+import requests
+
+response = requests.get(
+    'https://api.sandbox.lite.sa/v1/merchant/config',
+    headers={'Authorization': 'Bearer <your-token>'}
+)
+print(response.json())
+```
+
+```go Go
+req, _ := http.NewRequest("GET", "https://api.sandbox.lite.sa/v1/merchant/config", nil)
+req.Header.Add("Authorization", "Bearer <your-token>")
+client := &http.Client{}
+resp, _ := client.Do(req)
+```
+
+</CodeGroup>
+
+## Step 3 — Explore the API
+
+Now that you're authenticated, explore the full API reference to:
+
+<CardGroup cols={2}>
+  <Card title="Configure payment channels" href="/api-reference/channels/create-ecom">
+    Set up ecommerce or in-person channels.
+  </Card>
+  <Card title="Set up smart routing" href="/api-reference/smart-routing/create-profile">
+    Create routing profiles and rules.
+  </Card>
+  <Card title="Run payment reports" href="/api-reference/payment-reports/summary">
+    Pull transaction summaries and details.
+  </Card>
+  <Card title="Move money" href="/api-reference/money-movement/initiate-transfer">
+    Initiate payouts with OTP verification.
+  </Card>
+</CardGroup>
+
+<Note>
+  All sandbox calls use test data. No real money is moved and no real cards are charged.
+</Note>
