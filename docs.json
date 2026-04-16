@@ -53,6 +53,79 @@
         ]
       },
       {
+        "group": "Checkout",
+        "pages": [
+          "api-reference/checkout/create-session",
+          "api-reference/checkout/start-payment",
+          "api-reference/checkout/check-validity",
+          "api-reference/checkout/get-by-order-id",
+          "api-reference/checkout/get-session",
+          "api-reference/checkout/update-session"
+        ]
+      },
+      {
+        "group": "Payments",
+        "pages": [
+          "api-reference/payments/create-payment",
+          "api-reference/payments/create-3ds-payment",
+          "api-reference/payments/get-payment",
+          "api-reference/payments/get-payment-details",
+          "api-reference/payments/get-by-order-id",
+          "api-reference/payments/authorization-extension",
+          "api-reference/payments/void",
+          "api-reference/payments/capture",
+          "api-reference/payments/refund",
+          "api-reference/payments/pos-initiate",
+          "api-reference/payments/pos-update",
+          "api-reference/payments/pos-list",
+          "api-reference/payments/pos-latest"
+        ]
+      },
+      {
+        "group": "Instrument",
+        "pages": [
+          "api-reference/instrument/create-card",
+          "api-reference/instrument/create-apple-pay",
+          "api-reference/instrument/action",
+          "api-reference/instrument/list",
+          "api-reference/instrument/get",
+          "api-reference/instrument/public-key"
+        ]
+      },
+      {
+        "group": "Tokenization",
+        "pages": [
+          "api-reference/tokenization/create-token",
+          "api-reference/tokenization/retrieve-token"
+        ]
+      },
+      {
+        "group": "Payment Authentication",
+        "pages": [
+          "api-reference/payment-authentication/authenticate",
+          "api-reference/payment-authentication/confirm"
+        ]
+      },
+      {
+        "group": "Reports",
+        "pages": [
+          "api-reference/reports/acceptance-history",
+          "api-reference/reports/transactions-history"
+        ]
+      },
+      {
+        "group": "Webhooks",
+        "pages": [
+          "api-reference/webhooks/overview"
+        ]
+      },
+      {
+        "group": "Payment Links",
+        "pages": [
+          "api-reference/payment-links/overview"
+        ]
+      },
+      {
         "group": "Guides",
         "pages": [
           "guides/user-management",
